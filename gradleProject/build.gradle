@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+group 'org.sirekanyan'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+publishing {
+    repositories {
+        mavenLocal()
+    }
+    publications {
+        myLibrary(MavenPublication) {
+            from components.java
+        }
+    }
+}
